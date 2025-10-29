@@ -7,6 +7,7 @@
 let currentUser = null;
 let userResponses = {};
 let isAdmin = false;
+const Backend_url="https://backend-4tgw.onrender.com"
 
 // Questions data
 const questions = [
@@ -132,7 +133,7 @@ async function handleLogin(e) {
         }
 
         // Regular user login via API
-        const response = await fetch('http://localhost:3000/api/auth/login', {
+        const response = await fetch(` ${Backend-url}/api/auth/login` , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -173,7 +174,7 @@ async function handleRegister(e) {
     const age = parseInt(document.getElementById('registerAge').value);
 
     try {
-        const response = await fetch('http://localhost:3000/api/auth/register', {
+        const response = await fetch(const response = await fetch( `${Backend-url}/api/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -377,7 +378,7 @@ function calculateLevel(score) {
  */
 async function saveAssessmentResults(score, level, message) {
     try {
-        const response = await fetch('http://localhost:3000/api/assessments/submit', {
+        const response = await fetch(`${Backend-url}/api/assessments/submit`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -472,7 +473,7 @@ function calculateCategoryScore(questionNumbers) {
  */
 async function loadAdminStatistics() {
     try {
-        const response = await fetch('http://localhost:3000/api/admin/statistics');
+        const response = await fetch(`${Backend_url}/api/admin/statistics`);
         const data = await response.json();
 
         if (response.ok) {
@@ -780,4 +781,5 @@ function logout() {
     location.reload();
     
     showNotification('Sesión cerrada', 'success');
+
 }
