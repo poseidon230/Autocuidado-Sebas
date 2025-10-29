@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Espiritual - Tu Camino al Bienestar</title>
+    <link rel="stylesheet" href="../Frontend/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">🌸 Autocuidado</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#video" class="nav-link">Mi Video</a></li>
+                <li class="nav-item"><a href="#collage" class="nav-link">Collage</a></li>
+                <li class="nav-item"><a href="#mapa" class="nav-link">Mapa Mental</a></li>
+                <li class="nav-item"><a href="#circulo" class="nav-link">Círculo</a></li>
+                <li class="nav-item"><a href="#cuestionario" class="nav-link">Cuestionario</a></li>
+                <li class="nav-item"><button class="login-btn" onclick="openLoginModal()">Iniciar Sesión</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="lotus-animation">
+                <div class="lotus-petal"></div>
+                <div class="lotus-petal"></div>
+                <div class="lotus-petal"></div>
+                <div class="lotus-petal"></div>
+                <div class="lotus-petal"></div>
+                <div class="lotus-petal"></div>
+                <div class="lotus-petal"></div>
+                <div class="lotus-petal"></div>
+            </div>
+            <h1 class="hero-title">Tu Camino hacia el Autocuidado Espiritual</h1>
+            <p class="hero-subtitle">Descubre tu nivel de bienestar a través de la sabiduría hindú y budista</p>
+            <button class="cta-button" onclick="openLoginModal()">Comenzar Mi Viaje</button>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="section">
+        <div class="container">
+            <h2 class="section-title">Mi Video de Autocuidado</h2>
+            <div class="responsive-video">
+                <!-- Puedes usar un archivo local o un enlace de YouTube -->
+                <iframe 
+                    src="https://drive.google.com/file/d/1KzvDFzN358v8S7Bmv5EEvhOtZ8Oityse/preview" 
+                    width="640" 
+                    height="480" 
+                    allow="autoplay; fullscreen" 
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Collage Section -->
+    <section id="collage" class="section">
+        <div class="container">
+            <h2 class="section-title">Mi Collage Espiritual</h2>
+            <img src="../Frontend/IMG/4.png" alt="Collage espiritual" class="responsive-image">
+        </div>
+    </section>
+
+    <!-- Mind Map Section -->
+    <section id="mapa" class="section">
+        <div class="container">
+            <h2 class="section-title">Mapa Mental del Autocuidado</h2>
+            <img src="../Frontend/IMG/5.png" alt="Mapa mental del autocuidado" class="responsive-image">
+        </div>
+    </section>
+
+    <!-- Circle Section -->
+    <section id="circulo" class="section">
+        <div class="container">
+            <h2 class="section-title">Círculo de Autocuidado</h2>
+            <img src="../Frontend/IMG/1.png" alt="Círculo personal del autocuidado" class="responsive-image">
+        </div>
+    </section>
+
+    <!-- Questionnaire Section -->
+    <section id="cuestionario" class="section">
+        <div class="container">
+            <h2 class="section-title">Evaluación de Autocuidado</h2>
+            <div id="questionnaire-container" class="questionnaire-container">
+                <div class="login-prompt">
+                    <h3>Inicia sesión para acceder al cuestionario</h3>
+                    <button class="cta-button" onclick="openLoginModal()">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="resultados" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Tus Resultados</h2>
+            <div id="results-container" class="results-container"></div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section id="admin-dashboard" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Panel de Administración</h2>
+            <div id="stats-container" class="stats-container"></div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">Iniciar Sesión</button>
+                <button class="tab-btn" onclick="switchTab('register')">Registrarse</button>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <h3>Iniciar Sesión</h3>
+                <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+                <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                <button type="submit" class="submit-btn">Ingresar</button>
+            </form>
+
+            <form id="registerForm" class="auth-form hidden">
+                <h3>Crear Cuenta</h3>
+                <input type="text" id="registerName" placeholder="Nombre completo" required>
+                <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                <input type="number" id="registerAge" placeholder="Edad" required min="1" max="120">
+                <button type="submit" class="submit-btn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Autocuidado Espiritual. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="../Frontend/script.js"></script>
+</body>
+</html>
